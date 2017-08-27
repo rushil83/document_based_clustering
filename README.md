@@ -1,19 +1,19 @@
 
 # Clustering
 
-##### Performing clustering on a scatter output classes would give us much lower accuracies
+##### ● Performing clustering on a scatter output classes would give us much lower accuracies
 
 ##### compared to data points spreaded in small cluster. The task is to create the cluster by
 
 ##### breaking down our document files into words
 
-##### This model of Hierarchical clustering is performed in multi dimensional space hence
+##### ● This model of Hierarchical clustering is performed in multi dimensional space hence
 
 ##### creating a lot of space complexity as well as time complexity in our model. Better to
 
 ##### perform in chunks with the help of pickles(recommended)
 
-##### Cluster number can be changed, ideal according to hierarchical clustering in this model
+##### ● Cluster number can be changed, ideal according to hierarchical clustering in this model
 
 ##### it should be 2 as according to the max space distance methodology but cluster number
 
