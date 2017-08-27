@@ -1,5 +1,5 @@
 
-# Clustering
+# Clustering (visit readme_pdf)
 
 ##### ● Performing clustering on a scatter output classes would give us much lower accuracies
 
