@@ -42,7 +42,7 @@ tfidf_vectorizer = TfidfVectorizer(max_df=0.8,min_df=0.2, stop_words='english',u
 tfidf_matrix = tfidf_vectorizer.fit_transform(data)
 from sklearn.metrics.pairwise import cosine_similarity
 dist = 1 - cosine_similarity(tfidf_matrix)
-pca = RandomizedPCA(n_components=2).fit_transform(dist)
+pca = RandomizedPCA(n_components=2).fit_transform(dist)##or upto you get the full variance cover of your dataset
 x = pca[:,0]
 y = pca[:,1]
 
@@ -50,6 +50,39 @@ plt.scatter(x,y)
 plt.show()
 
 linkage_matrix = ward(dist)
+
+## trying different types of clustering techniques and evaluating the results of each one
+
+def plot_clusters(data, algorithm, args, kwds):
+    start_time = time.time()
+    labels = algorithm(*args, **kwds).fit_predict(data)
+    end_time = time.time()
+    palette = sns.color_palette('deep', np.unique(labels).max() + 1)
+    colors = [palette[x] if x >= 0 else (0.0, 0.0, 0.0) for x in labels]
+    plt.scatter(data['x'], data['y'], c=colors, **plot_kwds)
+    frame = plt.gca()
+    frame.axes.get_xaxis().set_visible(False)
+    frame.axes.get_yaxis().set_visible(False)
+    plt.title('Clusters found by {}'.format(str(algorithm.__name__)), fontsize=24)
+    plt.text(-0.5, 0.7, 'Clustering took {:.2f} s'.format(end_time - start_time), fontsize=14)
+    plt.show()
+
+
+# plot_clusters(p, cluster.KMeans, (), {'n_clusters':5})
+
+# plot_clusters(p, cluster.AgglomerativeClustering, (), {'n_clusters':5, 'linkage':'ward'})
+
+# plot_clusters(p, cluster.AffinityPropagation, (), {'preference':-5.0, 'damping':0.95})
+
+# plot_clusters(p, cluster.SpectralClustering, (), {'n_clusters':5})
+
+# plot_clusters(p, cluster.MeanShift, (0.175,), {'cluster_all':False})
+
+# plot_clusters(p, cluster.DBSCAN, (), {'eps':0.25})
+
+# plot_clusters(p,cluster.MiniBatchKMeans,(),{'n_clusters':5,'max_iter':150})
+
+
 
 plt.figure(figsize=(25, 10))
 
