@@ -1,6 +1,5 @@
 
 # Clustering
-   view - readme.pdf for the results and full description
 
  Performing clustering on a scatter output classes would give us much lower accuracies compared to data points spreaded in small cluster. The task is to create the cluster by breaking down our document files into words.
  
