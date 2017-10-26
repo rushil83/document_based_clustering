@@ -28,36 +28,36 @@ Dataset representaion in 2D after applying `PCA`(Dimension Reduction).
 - Tfidf vectorizer used to project the words of the documents into the vector space
 - Counter used to get the most common element or tag in that particular cluster
 
+## Dependencies used
+
+- import os
+- import re
+- from collections import Counter
+- import numpy as np
+- from nltk.tokenize import word_tokenize
+- from nltk.tokenize import sent_tokenize
+- from nltk.stem import WordNetLemmatizer
+- from sklearn.cluster import KMeans
+- from sklearn.externals import joblib
+- from sklearn.feature_extraction.text import TfidfVectorizer
+- from sklearn.decomposition import RandomizedPCA
+- import matplotlib.pyplot as plt
+- from nltk.corpus import stopwords
+- from scipy.cluster.hierarchy import ward, dendrogram
 
 
 ## Results
+
+### Result Dendrogram
+
+![DENDROGRAM](https://github.com/rushil83/document_based_clustering/blob/master/result_dendrogram.png)
+
 
 Results can vary as taking max space distance into consideration if we take distance as 30 we
 can see that in dendrogram ,horizontal line( at d=30 ) in graph cut-cross 4 vertical points hence
 4 clusters, similarly various number of cluster can be taken depending upon which distance line
 chosen.
 
-
-## Dependencies used
-
-import os
-import re
-from collections import Counter
-import numpy as np
-from nltk.tokenize import word_tokenize
-from nltk.tokenize import sent_tokenize
-from nltk.stem import WordNetLemmatizer
-from sklearn.cluster import KMeans
-from sklearn.externals import joblib
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.decomposition import RandomizedPCA
-import matplotlib.pyplot as plt
-from nltk.corpus import stopwords
-from scipy.cluster.hierarchy import ward, dendrogram
-
-### Result Dendrogram
-
-![DENDROGRAM](https://github.com/rushil83/document_based_clustering/blob/master/result_dendrogram.png)
 
 #### Taking threshold distance as 30 we got 4 clusters :
 
