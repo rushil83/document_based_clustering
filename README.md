@@ -1,7 +1,8 @@
 
 # Clustering
+Document clustering with the help of natutal language processing , here we will try to cluster the large database of documents into some common grounds or say topics in the form of clusters
 
- Performing clustering on a scatter output classes would give us much lower accuracies compared to data points spreaded in small cluster. The task is to create the cluster by breaking down our document files into words.
+ Performing clustering on a scatter data points ,would give us much lower accuracies compared to data points spreaded in small cluster. The task is to create the cluster by breaking down our document files into words. hence Hierarchical clustering model will be best fitted.
  
  This model of Hierarchical clustering is performed in multi dimensional space hence creating a lot of space complexity as well as time complexity in our model. Better to perform in chunks with the help of pickles(recommended)
 
